@@ -10,8 +10,8 @@ class AddFriend extends Component {
 
   render() {
     return (
-      <form onSubmit = {addFriend()}>
-        <input id="name" type="text" placeholder="Name"/>
+      <form>
+        <input type="text" placeholder="Name"/>
         <input type="text" placeholder="Age"/>
         <input type="text" placeholder="Email"/>
         <input type="submit"/>
