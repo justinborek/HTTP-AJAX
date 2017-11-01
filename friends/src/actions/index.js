@@ -14,9 +14,10 @@ export const getFriends = () => {
 
 export const addFriend = () => {
   const friendsEndpoint = 'http://localhost:5000/friends';
-  const friends = axios.post(friendsEndpoint, {name: 'test', age: 100, email: 'test@test.com'} );
-  return {
-    type: ADD_FRIEND,
-    payload: friends,
-  }
+  const newfriend = axios.patch(friendsEndpoint, {name: 'test', age: 100, email: 'test@test.com'} );
+  return (friendsEndpoint);
+  // return {
+  //   type: ADD_FRIEND,
+  //   payload: friends,
+  // }
 }

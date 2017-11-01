@@ -1,21 +1,29 @@
 import React, {Component} from 'react';
 import { connect } from 'react-redux';
 import axios from 'axios';
-import {addFriends} from '../actions';
+import {addFriend} from '../actions';
 
-class AddFriend extends Comment {
+class AddFriend extends Component {
   componentdidMount() {
-    this.props.addFriends();
+    this.props.addFriend();
   }
 
   render() {
     return (
-      <form>
-        <span><input type="text" placeholder="Name"/></span>
-        <span><input type="text" placeholder="Age"/></span>
-        <span><input type="text" placeholder="Email"/></span>
-        <span><input type="submit">Submit</input></span>
+      <form onSubmit = {addFriend()}>
+        <input id="name" type="text" placeholder="Name"/>
+        <input type="text" placeholder="Age"/>
+        <input type="text" placeholder="Email"/>
+        <input type="submit"/>
       </form>
     )
   }
 }
+
+const mapStateToProps = state => {
+  return {
+    friends: state.friends
+  }
+}
+
+export default connect(mapStateToProps, { addFriend })(AddFriend);

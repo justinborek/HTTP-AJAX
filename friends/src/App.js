@@ -1,12 +1,14 @@
 import React, { Component } from 'react';
 import logo from './logo.svg';
 import './App.css';
-import FriendsList from './components/FriendsList.js'
+import FriendsList from './components/FriendsList.js';
+import AddFriend from './components/AddFriend';
 
 class App extends Component {
   render() {
     return (
       <div className="App">
+        <AddFriend />
         < FriendsList /> 
       </div>
     );
